@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title - Kavya Naik</title>
+    <style>
+        .red-color{
+            color: red;
+        }
+        .green-color{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> Welcome to my Website</h1>
+    </div>
+    <div id = 'userDetails'>
+        <h2>
+            my name is 
+            <span id="username"> Kavya Naik</span>
+        </h2>
+    </div>
+
+    <button id="clickButton">
+        click me
+    </button>
+    <script>
+        const clickButton = document.getElementById('clickButton')
+        clickButton.addEventListener('click', () => {
+            console.log('button clicked')
+        })
+
+        // color change on click/mouseover/mouseout
+        const userDetails = document.getElementById('userDetails')
+
+        const removeColorClasses = () => {
+            userDetails.classList.remove('red-color', 'green-color');
+        };
+
+
+        const changeColor = () => {
+            removeColorClasses()
+            userDetails.classList.add('red-color')
+        }
+
+        const hoverColorChange = () => {
+            removeColorClasses()
+            userDetails.classList.add('green-color')
+        }
+
+        clickButton.addEventListener('click', changeColor)
+        clickButton.addEventListener('mouseover', hoverColorChange)
+        clickButton.addEventListener('mouseout', removeColorClasses)
+
+        // remove element on click
+
+        const allChildren = document.querySelector("body").children
+
+        for(let i = 0; i < allChildren.length; ++i) {
+            allChildren.item(i).addEventListener("click", () => {
+                allChildren.item(i).remove();
+            })
+        }
+
+    </script>
+</body>
+</html>

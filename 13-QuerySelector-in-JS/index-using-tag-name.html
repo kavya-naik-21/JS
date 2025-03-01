@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya Naik</title>
+</head>
+<body>
+    <script>
+        console.log('before doing query Selector stuff')
+    </script>
+
+    <h1> This is heading</h1>
+    <pre><code> This is a code block</code></pre>
+
+    <script>
+        const body = document.querySelector('body')
+        console.log(body.innerHTML)
+        body.innerHTML = "<h1>GOT HACKED</h1>"
+        console.log("inside query selector script")
+    </script>
+    <script>
+        console.log('after doing query Selector stuff')
+    </script>
+    <h2>
+        XXXXXXXXXXXXXXXXXXXX
+    </h2>
+    <script>
+        console.log('after xxxxxxxxxxxxxxxx')
+    </script>
+    <!-- The console output you're getting suggests that all the scripts are executing as expected, 
+    despite the innerHTML modification of the body tag. 
+    This behavior may occur due to how the browser optimizes script execution. -->
+    
+    <!-- The innerHTML replacement technically removes the subsequent scripts from the DOM, 
+     but it doesn't stop their execution if they've already started or been queued for execution. -->
+
+     <!-- The scripts continue running because they were 
+      already parsed and queued for execution before the DOM was modified. 
+      If you need to dynamically update the DOM in a way that avoids unexpected behavior, 
+      consider modifying specific parts of the DOM rather than replacing the entire innerHTML. 
+      
+      check index2.html
+      
+      -->
+
+
+</body>
+</html>

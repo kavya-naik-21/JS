@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div id = "myContainer"></div>
+        <button id = "myButton"> Click me</button>
+        <script>
+            const button = document.getElementById('myButton')
+            const container = document.getElementById('myContainer')
+            let count = 1;
+            button.addEventListener("click", () => {
+                const element = document.createElement('h1')
+                element.innerText = "Kavya Naik " + count;
+                container.appendChild(element)
+                count++;
+            })
+        </script>
+    </body>
+</html>

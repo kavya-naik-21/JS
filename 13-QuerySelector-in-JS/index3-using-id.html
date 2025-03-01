@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title - Kavya Naik</title>
+</head>
+<body>
+    <h1 class="blockClass"> This is heading index3-using-#id</h1>
+
+    <div class="blockClass">
+        <h2> ONE MORE DIV</h2>
+    </div>
+
+    <div class="blockClass">
+        <span id="username"> Kavya Naik</span>
+        <pre><code> This is a code block</code></pre>
+    </div>
+
+    <div class="anotherBlockClass">
+        <h1> ONEEE </h1>
+        <h2> ONE MORE DIV</h2>
+    </div>
+    <script>
+        const span = document.querySelector('#username')
+        // use innerText to modify name
+        span.innerText = 'XYZ'
+        
+        const blockClass = document.querySelector('.blockClass')
+        blockClass.innerHTML = '<h2> This is replaced blockClass</h2>'
+
+
+        const anotherBlockClass = document.querySelector('.anotherBlockClass') 
+        console.log(anotherBlockClass.children)
+        console.log(anotherBlockClass.parentElement.children)
+
+
+        const alls = document.querySelectorAll('.blockClass') 
+        // an array of elements is returned
+        console.log(alls)
+        // can be used to print each of elemt of array
+        alls.forEach((e) => {
+            console.log(e)
+        })
+
+        alls.forEach((e) => {
+            console.log(e.innerHTML)
+        })
+
+        alls.forEach((e) => {
+            console.log(e.innerText)
+        })
+    </script>
+
+</body>
+</html>
